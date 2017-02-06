@@ -5,6 +5,7 @@ export default class CommentList extends Component {
 
     constructor(props) {
         super();
+        //вот это ты очень плохо придумал. Читать надо из this.props.comments, иначе они не будут обновлятся
         this.comments = props.comments;
         this.state = {
             isOpen: false
