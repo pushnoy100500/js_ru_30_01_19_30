@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import Comment from './Comment'
 
 class CommentList extends Component {
@@ -6,16 +6,16 @@ class CommentList extends Component {
         comments: []
     }
     componentDidMount() {
-        console.log('---', 'mounted')
+        // console.log('---', 'mounted')
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log('---', this.props, nextProps)
+        // console.log('---', this.props, nextProps)
     }
 
 
     componentWillUnmount() {
-        console.log('---', 'unmounting')
+        // console.log('---', 'unmounting')
     }
 
     state = {
@@ -43,11 +43,15 @@ class CommentList extends Component {
     }
 
     toggleOpen = ev => {
-        ev.preventDefault()
+        ev.preventDefault();
         this.setState({
             isOpen: !this.state.isOpen
         })
     }
 }
+
+CommentList.propTypes = {
+    comments: PropTypes.array
+};
 
 export default CommentList
