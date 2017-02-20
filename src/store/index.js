@@ -9,11 +9,11 @@ const composeEnhancers =
             // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
         }) : compose;
 
-const enhancer = composeEnhancers(
-    applyMiddleware(logger)
-)
+// const enhancer = composeEnhancers(
+//     applyMiddleware(logger)
+// )
 
-const store = createStore(reducer, {}, enhancer)
+const store = createStore(reducer, {})//, enhancer)
 
 //dev only
 window.store = store
